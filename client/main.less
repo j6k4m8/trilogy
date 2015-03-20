@@ -1,0 +1,58 @@
+@primary-fg: #dbb;
+@primary-bg: #422;
+@secondary-bg: #621C49;
+@serif-stack: 'Georgia', 'Times New Roman', serif;
+
+body {
+    background-color: @primary-bg;
+    color: @primary-fg;
+    font-family: @serif-stack;
+}
+
+
+.page.card {
+    opacity: 1;
+    transition: all 1s;
+    background-color: #621C49;
+    border: 5px solid @secondary-bg;
+    max-width: 700px;
+    margin: auto;
+
+    &.faded {
+        opacity: 0;
+    }
+
+    .last-year-section {
+        background-color: fade(@primary-bg, 10);
+    }
+
+
+    .statement-text {
+        font-size: 1.5em;
+        font-style: italic;
+    }
+    .statement-details {
+        font-size: 0.9em;
+        color: darken(@primary-fg, 10);
+        &:before {
+            content: "-----";
+            color: #dedede;
+            text-decoration: line-through;
+        }
+    }
+
+    input.new-statement {
+        background: transparent;
+        color: @primary-fg;
+        width: 100%;
+        padding: 0.1em;
+        font-family: @serif-stack;
+        border: none;
+        outline: none !important;
+        font-style: italic;
+        &:active {
+            border: none;
+            outline: none;
+        }
+    }
+}

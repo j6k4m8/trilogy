@@ -1,0 +1,53 @@
+<body>
+    <div class="row">
+        <div class="col-xs-12">
+            {{> loginButtons}}
+        </div>
+    </div>
+    {{> main}}
+</body>
+
+<template name="main">
+    <div class="page card">
+        <div class="container">
+            {{> showTodayForUser}}
+        </div>
+        <div class="container">
+            {{> showLastYearForUser}}
+        </div>
+    </div>
+</template>
+
+<template name="showTodayForUser">
+    <div class="row today-section">
+        <div class="col-xs-12">
+            <ol>
+                {{#each statements}}
+                    {{> showStatement}}
+                {{/each}}
+                <li class="statement-text">
+                    <input placeholder="New..." class="new-statement">
+                </li>
+            </ol>
+        </div>
+    </div>
+</template>
+
+<template name="showLastYearForUser">
+    <div class="row last-year-section">
+        <div class="col-xs-12">
+            <ol>
+                {{#each statements}}
+                    {{> showStatement}}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+</template>
+
+<template name="showStatement">
+    <li class="statement-container">
+        <span class="statement-text">{{text}}</span>
+        <span class="statement-details">{{date}}</span>
+    </li>
+</template>
